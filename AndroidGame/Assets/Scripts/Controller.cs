@@ -23,30 +23,31 @@ public class Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		bool isAttackPress1 = CrossPlatformInputManager.GetButtonDown ("Jump");
-		//if (CrossPlatformInputManager.GetButtonDown ("Jump")) {
-
-
-			m_animator.SetBool ("isAttack1", isAttackPress1);
-
-
-		//} else {
-
-		//	m_animator.SetBool ("isAttack1", false);
-		//}
-
-
-
-
+	
+	
 		//TO MOVE
-		//rb.velocity = new Vector2 (speedX, rb.velocity.y);
+
+		//rb.velocity = new Vector2 (1, rb.velocity.y);
 
 
-
-		//if (Input.GetMouseButtonDown (0)) {
-			//m_animator.SetBool("isWalking", true);
-			//rb.velocity = new Vector2 (rb.velocity.x, 6);
-
+		if (CrossPlatformInputManager.GetButtonDown("Jump") == true) {
+			m_animator.SetBool ("isAttack1", true);
+		
 		}
+		 else {
+			m_animator.SetBool ("isAttack1", false);
+		}
+		if (Input.GetMouseButton (0) && CrossPlatformInputManager.GetButtonDown ("Jump") == false) {
+			m_animator.SetBool ("isWalking", true);
+			rb.velocity = new Vector2 (speedX, rb.velocity.y);
+
+		} else {
+
+			m_animator.SetBool ("isWalking", false);
+		}
+
+
 	}
-//}
+}
+
+

@@ -5,19 +5,12 @@ namespace UnityStandardAssets.CrossPlatformInput
 {
     public class ButtonHandler : MonoBehaviour
     {
-		
-		Animator m_animator;
-        public string Name;
-		void Start () {
-			
-			m_animator = GetComponent<Animator> ();
 
-		}
+        public string Name;
 
         void OnEnable()
         {
-			bool isAttack1Pressed = Input.GetMouseButtonDown(0);
-			m_animator.SetBool ("isAttack1", isAttack1Pressed);
+
         }
 
         public void SetDownState()
