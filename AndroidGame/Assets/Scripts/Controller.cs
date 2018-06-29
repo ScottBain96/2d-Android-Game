@@ -30,7 +30,7 @@ public class Controller : MonoBehaviour {
 
 		if (CrossPlatformInputManager.GetButtonDown("Jump") == true) {
 			m_animator.SetBool ("isJump", true);
-			rb.velocity = new Vector2 (speedX, 5);
+			rb.velocity = new Vector2 (rb.velocity.x, 5);
 		}
 		else {
 
